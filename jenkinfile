@@ -1,30 +1,25 @@
 node {
-      stage('Git clone') { 
-      git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/jenkinsfile.git'
-    }
       
-	  stage('maven clean') { 
-        sh 'mvn clean'
+	stage('Git clone') { 
+     git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/jenkinsfile.git'
     }
-	 
-	  stage('maven validate') {
-	     sh 'mvn validate'
+     
+	stage('maven clean') { 
+     sh 'mvn clean'
+    }
+	stage('maven validate') {
+	 sh 'mvn validate'
 	}
-    
-      stage('maven compile') {
-        sh 'mvn compile'
+    stage('maven compile') {
+     sh 'mvn compile'
     }
-    
-      stage('maven Test') {
-        sh 'mvn test'
+    stage('maven Test') {
+     sh 'mvn test'
     }  
-
-      stage('maven Package') {
-        sh 'mvn package'	
-    
+    stage('maven Package') {
+    sh 'mvn package'	
     }	
 	  
-    	 
  } 
  
  
