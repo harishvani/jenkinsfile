@@ -1,7 +1,7 @@
 node {
       
 	stage('Git clone') { 
-     git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/simple-java-project.git'
+     git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/simple-java-project-1.git'
     }
      
 	stage('maven clean') { 
