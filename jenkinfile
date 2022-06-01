@@ -3,6 +3,9 @@ node {
 	stage('Git clone') { 
     git branch: 'J2EE', credentialsId: 'github3', url: 'https://github.com/harishvani/onlinebookstore.git'
     }
+        stage ('maven version') {
+	sh 'mvn --version'
+     }
      
 	stage('maven clean') { 
      sh 'mvn clean'
