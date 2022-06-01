@@ -1,7 +1,7 @@
 node {
       
 	stage('Git clone') { 
-     git branch: 'J2EE', credentialsId: 'github2', url: 'https://github.com/harishvani/onlinebookstore.git'
+    git branch: 'J2EE', credentialsId: 'github3', url: 'https://github.com/harishvani/onlinebookstore.git'
     }
      
 	stage('maven clean') { 
