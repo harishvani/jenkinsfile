@@ -7,32 +7,42 @@ pipeline {
 	
 	stages {
 	     stage('Git clone') {
-	      steps {git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/simple-java-project.git'
+	      steps {
+		  git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/simple-java-project.git'
 	      }
 		  }
 	
 	      stage('maven clean') {
-	      steps {'mvn clean'
+	      steps {
+		    sh 'mvn clean'
+			
 	      }
 		  }
 	      stage('maven validate') {
-	      steps { 'mvn validate'
+	      steps { 
+		    sh 'mvn validate'
+			
 	      }
 		  }
 	      stage('maven compile') {
-	      steps {'mvn compile'
+	      steps { 
+		   sh 'mvn compile'
+		   
 	      }
 		  }
 	      stage('maven Test') {
-	      steps { 'mvn test'
+	      steps { 
+		   sh 'mvn test'
 	      }
 		  }
 	      stage('maven Package') {
-	      steps {'mvn Package'
+	      steps {
+		   sh 'mvn Package'
 	      }
 		  }
 	      stage('maven deploy') {
-	      steps {'mvn deploy'
+	      steps {
+		   sh 'mvn deploy'
 	      }
 		  }
 	      
