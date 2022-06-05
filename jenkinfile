@@ -8,7 +8,7 @@ pipeline {
 	stages {
 	     stage('Git clone') {
 	      steps {
-		  git branch: 'main', credentialsId: 'github2', url: 'https://github.com/harishvani/simple-java-project.git'
+		 git branch: 'J2EE', credentialsId: 'github', url: 'https://github.com/harishvani/onlinebookstore.git'
 	      }
 		  }
 	
