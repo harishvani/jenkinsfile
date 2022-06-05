@@ -18,6 +18,13 @@ pipeline {
 			
 	      }
 		  }
+		  
+		  stage('maven version') {
+	      steps {
+		    sh 'mvn --version'
+			
+	      }
+		  }
 	      stage('maven validate') {
 	      steps { 
 		    sh 'mvn validate'
