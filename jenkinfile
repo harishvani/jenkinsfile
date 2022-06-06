@@ -37,7 +37,11 @@ pipeline {
 		   
 	      }
 		  }
-	     
+	      stage('maven Test') {
+	      steps { 
+		   sh 'mvn test'
+	      }
+		  }	     
 	      stage('maven Package') {
 	      steps {
 		   sh 'mvn Package'
