@@ -16,6 +16,9 @@ node {
     stage('maven compile') {
      sh 'mvn compile'
     }
+	stage ('sonar scan') {
+	 sh 'mvn sonar:sonar -Dsonar.host.url=http://3.92.228.74:9000 -Dsonar.login=2446c53e71049271201c5750c12044e418e288a7'
+	}
     stage('maven Test') {
      sh 'mvn test'
     }  
